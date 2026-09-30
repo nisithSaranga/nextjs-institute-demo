@@ -1,0 +1,36 @@
+# Dependencies and generated output
+node_modules/
+.next/
+out/
+.vercel/
+*.tsbuildinfo
+
+# Local environment and credentials (never commit real secrets)
+.env*
+.npmrc
+.netrc
+.ssh/
+.aws/
+credentials.json
+credentials.*.json
+service-account*.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Temporary verification output and local caches
+test-results/
+playwright-report/
+playwright/.cache/
+coverage/
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# Archived reference-site snapshots and unused original imagery
+# Active Nexora assets are kept in public/ and remain tracked.
+/reference/
+next-env.d.ts
