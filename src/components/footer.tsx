@@ -30,6 +30,7 @@ export function Footer() {
                     </Link>
                   </li>
                 ))}
+                <li><Link href="/projects">Concept projects</Link></li>
               </ul>
             </div>
             <div>

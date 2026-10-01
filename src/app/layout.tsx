@@ -6,6 +6,9 @@ import { ScrollReveal } from "@/components/scroll-reveal";
 import { site } from "@/content/site";
 import "./globals.css";
 import "./inner-pages.css";
+import "./reference-parity.css";
+import "./saved-reference.css";
+import { HeaderScroll } from "@/components/header-scroll";
 
 const manrope = localFont({
   src: "./fonts/Manrope-Variable.ttf",
@@ -30,6 +33,7 @@ export default function RootLayout({
         <a className="skip-link" href="#main">
           Skip to content
         </a>
+        <HeaderScroll />
         <Header />
         {children}
         <Footer />

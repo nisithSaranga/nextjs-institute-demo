@@ -26,7 +26,21 @@ export function HeroCarousel({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  async function select(index: number) {
+  const timer = useRef<ReturnType<typeof setInterval> | null>(null);
+  const advance = useRef<() => void>(() => {});
+  useEffect(() => {
+    const motion = matchMedia("(prefers-reduced-motion: reduce)");
+    const restart = () => {
+      if (timer.current) clearInterval(timer.current);
+      timer.current = motion.matches ? null : setInterval(() => advance.current(), 6500);
+    };
+    restart();
+    motion.addEventListener("change", restart);
+    return () => { if (timer.current) clearInterval(timer.current); motion.removeEventListener("change", restart); };
+  }, []);
+
+  async function select(index: number, manual = true) {
+    if (manual && timer.current) { clearInterval(timer.current); timer.current = setInterval(() => advance.current(), 6500); }
     requested.current = index;
     const selection = ++version.current;
     const image = images.current[index];
@@ -41,6 +55,8 @@ export function HeroCarousel({ children }: { children: ReactNode }) {
       if (selection === version.current) requested.current = active;
     }
   }
+
+  advance.current = () => { void select((requested.current + 1) % heroSlides.length, false); };
 
   function step(direction: number) {
     void select(
@@ -112,14 +128,6 @@ export function HeroCarousel({ children }: { children: ReactNode }) {
                   aria-label={`Show ${slide.label.toLowerCase()} background`}
                   aria-pressed={index === active}
                   onClick={() => void select(index)}
-                  onPointerEnter={(event) => {
-                    if (
-                      event.pointerType === "mouse" &&
-                      matchMedia("(hover: hover) and (pointer: fine)").matches
-                    ) {
-                      void select(index);
-                    }
-                  }}
                 >
                   <span aria-hidden="true" />
                 </button>

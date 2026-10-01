@@ -18,7 +18,7 @@ Additional hero image identifiers: `photo-1768633647910-7e6fb53e5b0f` (IT suppor
 
 Manrope is downloaded from the [Google Fonts repository](https://github.com/google/fonts/tree/main/ofl/manrope), stored as `src/app/fonts/Manrope-Variable.ttf`, and loaded with `next/font/local`. The accompanying SIL Open Font License is `src/app/fonts/OFL.txt`. No network font download occurs during development or builds.
 
-The Nexora N mark, favicon, service icons and concept-preview layouts/illustrations are original SVG/HTML/CSS in this project. The concept names are fictional examples, not customer identities. All three previews are explicitly labelled concepts. Preview type treatments are deliberate design-study variations; the main site uses Manrope throughout.
+The Nexora N mark, favicon, service icons and concept-preview layouts/illustrations are original SVG/HTML/CSS in this project. The concept names are fictional examples, not customer identities. All three previews are explicitly labelled concepts. Preview type treatments are deliberate design-study variations; brand and concept-portfolio typography use locally hosted Manrope; the reference-shaped sections use system-sans metrics.
 
 No required asset is missing. Future replacement with approved company photography is optional. Inner-page image paths, honest alt text and desktop/mobile focal points are in `src/content/page-images.ts`; homepage backgrounds are in `src/content/hero-slides.ts`, and project photography is in `src/content/projects.ts`.
 
@@ -27,3 +27,11 @@ The inner-page upgrade reuses these local photographs without additional downloa
 The expanded portfolio previews are original HTML/CSS mockups, with proposed navigation, page sections and content relevant to each fictional concept. The Northline preview uses an editorial service overview in place of its smaller decorative architecture illustration; the repair preview uses a drawn device and issue/process sections. The restaurant stock image is used as proposed website content inside the Olive & Ember mockup. None is represented as a real client screenshot or a live website.
 
 The former institute snapshots and unused images remain in `reference/` only, outside the exported site. They are not sources for the Nexora visitor experience.
+
+## Reference-matching update
+
+The fourth hero slide reuses the licensed local development photo. The homepage gallery has eight illustrative entries using the five existing licensed Nexora photographs; three entries are alternative crops, not additional claimed engagements. The development photo also supplies the split introduction. No reference branding, personal photos or partner images were copied into production. Inspection-only source and screenshots remain under ignored reference/live/.
+
+## Saved inner-page reconstruction
+
+No additional images were downloaded. `src/content/reference-pages.ts` holds hero focal positions and the gallery sequence. About uses five local illustrative scenes; Support has eight positions with five distinct photographs and three repeats/crops. Approach uses four capability images and seven illustrative context images; these are not staff portraits or partner evidence. Contact uses a workspace image instead of a map because no address is authorized. Hero images preload; below-fold images lazy-load. Exact reference photographs intentionally remain outside production. Original hero backgrounds were not available in the saved evidence.

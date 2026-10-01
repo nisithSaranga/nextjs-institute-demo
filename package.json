@@ -10,7 +10,8 @@
     "preview": "node scripts/preview.mjs",
     "test:browser": "node scripts/check-browser.mjs",
     "test:hero": "node scripts/check-hero.mjs",
-    "test:inner": "node scripts/check-inner-pages.mjs"
+    "test:inner": "node scripts/check-inner-pages.mjs",
+    "test:parity": "node scripts/check-reference-parity.mjs"
   },
   "dependencies": {
     "next": "^16.0.0",

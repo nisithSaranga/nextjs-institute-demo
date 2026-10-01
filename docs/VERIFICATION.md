@@ -1,3 +1,17 @@
+# Current saved-page verification (2026-10-01)
+
+All seven routes pass the four-width browser matrix. TypeScript, production static export, all four configured browser suites and `node scripts/check-saved-pages.mjs` passed. The latter verifies all five reconstructed inner-page entrances on direct load, refresh and client return, observer cleanup, below-fold reveals and persistent gallery pause/focus behavior. See [REFERENCE_PARITY.md section H](REFERENCE_PARITY.md#h-completed-saved-evidence-scope-2026-10-01) for exact scope, screenshot comparisons and unresolved reference evidence. No lint script is configured. No push or deployment occurred.
+
+The records below are historical.
+
+---
+
+# Latest reference-matching verification
+
+The homepage/shared UI has changed. Current implementation, test results, screenshot evidence and outstanding reference-access limitations are recorded in [REFERENCE_PARITY.md](REFERENCE_PARITY.md). TypeScript, static export and all four browser suites passed for the implemented scope, plus a targeted gallery/drawer timing check. Full-site reference parity is not complete. The notes below are historical and describe the earlier implementation, including its former manual three-slide hero and homepage reveal settings.
+
+---
+
 # Verification and reveal diagnosis
 
 The initial homepage was inspected before editing. A Chrome run with `prefers-reduced-motion: no-preference` instrumented `Element.animate` during slow wheel scrolling. Reduced-motion detection returned false and the initial observer was active.

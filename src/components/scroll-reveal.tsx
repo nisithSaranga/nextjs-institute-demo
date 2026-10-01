@@ -8,6 +8,7 @@ export function ScrollReveal() {
   useEffect(() => {
     if (!("IntersectionObserver" in window) || !Element.prototype.animate)
       return;
+    const home = pathname !== "/projects" && pathname !== "/projects/";
     const motion = matchMedia("(prefers-reduced-motion: reduce)");
     const animations = new Map<Element, Animation>();
     const seen = new Set<Element>();
@@ -35,13 +36,13 @@ export function ScrollReveal() {
           );
           const animation = entry.target.animate(
             [
-              { opacity: 0, transform: "translateY(24px)" },
+              { opacity: 0, transform: home ? "translateY(22px)" : "translateY(24px)" },
               { opacity: 1, transform: "translateY(0)" },
             ],
             {
-              duration: 720,
-              delay,
-              easing: "cubic-bezier(.22,.61,.36,1)",
+              duration: home ? 700 : 720,
+              delay: home ? 0 : delay,
+              easing: home ? "ease" : "cubic-bezier(.22,.61,.36,1)",
               fill: "backwards",
             },
           );
@@ -49,7 +50,7 @@ export function ScrollReveal() {
           animation.onfinish = () => animations.delete(entry.target);
         }
       },
-      { rootMargin: `0px 0px -${inset}px 0px`, threshold: 0 },
+      home ? { threshold: 0.1 } : { rootMargin: `0px 0px -${inset}px 0px`, threshold: 0 },
     );
     targets.forEach((target) => {
       if (!seen.has(target)) observer.observe(target);

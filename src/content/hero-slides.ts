@@ -20,4 +20,5 @@ export const heroSlides = [
     position: "center 52%",
     mobilePosition: "65% center",
   },
+  { image: "/images/nexora/development.webp", label: "Development workspace", position: "center center", mobilePosition: "center center" },
 ] as const;

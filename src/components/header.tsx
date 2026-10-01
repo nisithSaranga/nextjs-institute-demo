@@ -10,6 +10,7 @@ export function Header() {
         <Brand />
         <NavigationLinks location="Main" />
         <div className="header-action">
+          <WhatsAppLink>WhatsApp</WhatsAppLink>
           <Button href="/contact">Let’s talk</Button>
         </div>
         <MobileMenu>
