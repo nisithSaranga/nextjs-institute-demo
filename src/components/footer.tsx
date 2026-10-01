@@ -17,11 +17,11 @@ export function Footer() {
               <p className="mt-3 max-w-80">{site.description}</p>
             </div>
             <div>
-              <h2>Explore</h2>
+              <h2>Navigation</h2>
               <NavigationLinks location="Footer" />
             </div>
             <div>
-              <h2>What we do</h2>
+              <h2>Services</h2>
               <ul className="grid gap-3">
                 {services.map((service) => (
                   <li key={service.id}>
@@ -34,7 +34,7 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <h2>Start a conversation</h2>
+              <h2>Contact</h2>
               <a className="contact-number" href={telephoneHref}>
                 {contact.displayNumber}
               </a>

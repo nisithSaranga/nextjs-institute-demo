@@ -64,7 +64,6 @@ export function TabbedEnquiry() {
         <button className="btn btn-primary" type="submit">Prepare WhatsApp draft</button>
         </fieldset>
         </form>{draft?.index === index && <div className="enquiry-status" role="status" tabIndex={-1} ref={status}>Your draft is ready. Nothing has been sent. Review and send it in WhatsApp. <a href={draft.href} target="_blank" rel="noopener noreferrer">Open your WhatsApp draft (new tab)</a>.</div>}</div>)}
-    <p id="enquiry-guidance" className="enquiry-guidance">* Required. Opens WhatsApp in a new tab. Review and send your draft there; nothing is sent automatically. Please leave out passwords and private files.</p>
     {!ready && <div className="enquiry-fallback">
     <p>The form needs JavaScript to prepare a draft. Use the phone or WhatsApp links to make an enquiry.</p>
     </div>}

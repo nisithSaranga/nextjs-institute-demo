@@ -30,16 +30,26 @@ export function EvidenceHeading({ eyebrow, title, children }: {
     <h2>{title}</h2>{children && <p>{children}</p>}</div>;
 }
 export function EvidenceCta() {
-    return <section className="evidence-cta">
-    <div className="container" data-reveal>
-    <div>
-    <p className="eyebrow">Connect with Nexora</p>
-    <h2>Let&apos;s discuss your next step.</h2>
-    </div>
-    <a className="btn btn-primary" href={whatsappHref()} target="_blank" rel="noopener noreferrer">Enquire on WhatsApp<span className="sr-only"> (opens a new tab)</span>
-    </a>
-    </div>
-    </section>;
+  return (
+    <section className="evidence-cta reference-bottom-cta">
+      <div className="container">
+        <div className="reference-cta-copy" data-reveal>
+          <p className="eyebrow">Connect</p>
+          <h2>Let&apos;s talk about your next step.</h2>
+        </div>
+
+        <a
+          className="reference-whatsapp-button"
+          href={whatsappHref()}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Talk on WhatsApp
+          <span className="sr-only"> (opens a new tab)</span>
+        </a>
+      </div>
+    </section>
+  );
 }
 export function EvidenceFaq({ items }: {
     items: {
