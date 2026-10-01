@@ -1,9 +1,6 @@
 import Link from "next/link";
-import { site, services } from "@/content/site";
-import { contact, telephoneHref, whatsappHref } from "@/content/contact";
 import { Brand } from "./brand";
-import { NavigationLinks } from "./navigation-links";
-import { ChatIcon } from "./icons";
+import { whatsappHref } from "@/content/contact";
 
 export function Footer() {
   return (
@@ -11,63 +8,111 @@ export function Footer() {
       <footer className="footer">
         <div className="container">
           <div className="footer-grid">
-            <div>
+            <div className="footer-about">
               <Brand />
-              <p className="mt-6 max-w-72">{site.tagline}</p>
-              <p className="mt-3 max-w-80">{site.description}</p>
+
+              <p>Thoughtful technology. Practical solutions.</p>
+
+              <p>
+                Website design and development, computer support and network
+                setup for small businesses.
+              </p>
             </div>
+
             <div>
               <h2>Navigation</h2>
-              <NavigationLinks location="Footer" />
-            </div>
-            <div>
-              <h2>Services</h2>
-              <ul className="grid gap-3">
-                {services.map((service) => (
-                  <li key={service.id}>
-                    <Link href={`/services#${service.id}`}>
-                      {service.shortTitle}
-                    </Link>
-                  </li>
-                ))}
-                <li><Link href="/projects">Concept projects</Link></li>
+              <ul>
+                <li>
+                  <Link href="/">Home</Link>
+                </li>
+                <li>
+                  <Link href="/about">About</Link>
+                </li>
+                <li>
+                  <Link href="/services">Services</Link>
+                </li>
+                <li>
+                  <Link href="/support">Support</Link>
+                </li>
               </ul>
             </div>
+
+            <div>
+              <h2>Services</h2>
+              <ul>
+                <li>
+                  <Link href="/services#websites">
+                    Website Design &amp; Development
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/support">IT Support</Link>
+                </li>
+                <li>
+                  <Link href="/services#networks">Network Setup</Link>
+                </li>
+                <li>
+                  <Link href="/approach">Technical Solutions</Link>
+                </li>
+              </ul>
+            </div>
+
             <div>
               <h2>Contact</h2>
-              <a className="contact-number" href={telephoneHref}>
-                {contact.displayNumber}
-              </a>
-              <a
-                className="footer-whatsapp"
-                href={whatsappHref()}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ChatIcon />
-                WhatsApp ↗<span className="sr-only"> (opens a new tab)</span>
-              </a>
-              <p className="mt-2 text-xs">WhatsApp opens in a new tab.</p>
+              <ul>
+                <li>82 Galle Road, Colombo 03, Sri Lanka</li>
+
+                <li>
+                  <a href="mailto:hello@nexoratech.lk">
+                    hello@nexoratech.lk
+                  </a>
+                </li>
+
+                <li>
+                  <a href="tel:+94786620728">
+                    +94 78 662 0728
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href={whatsappHref()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    WhatsApp: +94 78 662 0728
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
+
           <div className="footer-bottom">
             <span>
-              © {new Date().getFullYear()} {site.name}.
+              © 2026 Nexora Technologies. All Rights Reserved.
             </span>
-            <span>Web. Support. Connected.</span>
+
+            <span className="footer-legal">
+              <a href="#">Privacy Policy</a>
+              <span> · </span>
+              <a href="#">Terms</a>
+            </span>
           </div>
         </div>
       </footer>
-      <a
-        className="floating-chat"
-        href={whatsappHref()}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat with Nexora on WhatsApp (opens a new tab)"
-        title="WhatsApp — opens a new tab"
-      >
-        <ChatIcon />
-      </a>
+<a
+  className="floating-chat"
+  href={whatsappHref()}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Chat with Nexora on WhatsApp"
+>
+  <img
+    src="https://cdn.simpleicons.org/whatsapp/FFFFFF"
+    alt=""
+    aria-hidden="true"
+  />
+</a>
     </>
   );
 }
