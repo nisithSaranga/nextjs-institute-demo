@@ -4,6 +4,8 @@ A static Next.js App Router website using TypeScript, Tailwind CSS and npm. Nexo
 
 The homepage/shared UI is preserved. Five inner pages now map the supplied saved reference evidence to honest Nexora content. See [the evidence record](docs/REFERENCE_PARITY.md) for observed structure, source-derived behavior, measured comparisons and precise remaining differences. Offline replay is not a claim of complete live-site parity.
 
+![Nexora UI](nexora.png)
+
 ## Local preview
 
 Requires Node.js 20.9+ and npm. The existing dependencies and lockfile are preserved.
